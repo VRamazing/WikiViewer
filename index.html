@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia Viewer</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+    <div class="site-wrapper" ng-app = "wikiApp" ng-controller = "wikiCtrl">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+<!--           <div class="masthead "> -->
+            <div class="inner">
+              <h3 class="masthead-brand">Wiki Viewer</h3>
+               <div class=" inner">
+                        
+                  <p class="lead">Click on <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" id="alink">Shuffle</a> for a random article or on <a href= "#" ng-click = "toggle()" id="alink">Search</a> to search an article of your choice.</p>
+                    <br>
+                  <p class="lead">
+                     <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" class="btn btn-lg btn-info btn-secondary"><span class="oi oi-random"></span></a>
+                    &nbsp;
+                    <a href="#" ng-click = "toggle()" class="btn btn-lg btn-info btn-secondary"><span class="oi oi-magnifying-glass"></span></a>
+                 
+                  </p>
+                  <br />
+                  <input ng-show = "input" type = "text" class = "form-control animate-show-hide" ng-model = "keyword" id = "input" placeholder="Enter a Keyword " />
+                    <br />
+<!--                     <div class = "data-card"> -->
+                       <div class="card data-card" ng-repeat = "elem in data">
+                        <div class="card-block" >
+                          <a ng-href="https://en.wikipedia.org/?curid={{elem.pageid}}" target="_blank"><h4 class="card-title">{{elem.title}}</h4></a>
+                          <p class="card-text">{{elem.extract}}</p>
+                        </div>
+                      </div>
+                   </div>
+                 
+              </div>
+              
+           
+<!--             </div> -->
+<!--           </div> -->
+
+         
+
+          <div class="mastfoot">
+            <div>
+              <p>Created by <a href="www.vigneshramesh.in" id="alink">@Vignesh Ramesh</a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-animate.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
